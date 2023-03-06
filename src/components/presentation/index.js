@@ -10,7 +10,7 @@ Presentation.Title = function PresentationTitle({ children, ...restProps }) {
     <Typography
       variant="h4"
       className={bodyFont.className}
-      fontWeight={600}
+      fontWeight={700}
       mb={1}
     >
       {children}

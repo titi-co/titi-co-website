@@ -28,7 +28,7 @@ export default function Header({ children, ...restProps }) {
         backgroundColor:
           theme.palette.mode == "dark"
             ? "rgba(32, 32, 35, .8)"
-            : "rgba(255, 255, 255, 0.4)",
+            : "rgba(255, 255, 255, 0.25)",
       }}
     >
       <Container maxWidth="md">

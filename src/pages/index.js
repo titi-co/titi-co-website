@@ -1,14 +1,7 @@
-import { Header } from "@/components";
-import { Box, Container, Typography } from "@mui/material";
+import { Callout, Header } from "@/components";
+import { Box, Container } from "@mui/material";
 import Head from "next/head";
-import { M_PLUS_Rounded_1c } from "next/font/google";
 import { Presentation } from "@/containers";
-
-const mp = M_PLUS_Rounded_1c({
-  weight: ["400", "700"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
 
 export default function Home() {
   return (
@@ -22,6 +15,10 @@ export default function Home() {
 
       <Box as="main" pt={14} px={2}>
         <Container maxWidth="sm">
+          <Callout icon="./icons/emoji-hangloose.svg">
+            Hi! I'm a brazilian software engineer!
+          </Callout>
+          <Box height={25} />
           <Presentation />
         </Container>
       </Box>
