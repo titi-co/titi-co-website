@@ -32,7 +32,14 @@ export default function Header({ children, ...restProps }) {
       }}
     >
       <Container maxWidth="md">
-        <Box display="flex" flexDirection="row" justifyContent="space-between">
+        <Box
+          sx={{
+            paddingX: { md: 10, lg: 10 },
+          }}
+          display="flex"
+          flexDirection="row"
+          justifyContent="space-between"
+        >
           <Logo />
           <Pages />
           <Box
