@@ -19,7 +19,7 @@ export default function Callout({ children, icon, ...restProps }) {
         <Image src={icon} width={20} height={20} />
       </Box>
       <Box display="flex" flex={8}>
-        <Typography variant="p" className={bodyFont.className} fontWeight={400}>
+        <Typography variant="p" className={bodyFont.className} fontWeight={500}>
           {children}
         </Typography>
       </Box>

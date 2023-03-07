@@ -1,7 +1,7 @@
 import { Callout, Header } from "@/components";
 import { Box, Container } from "@mui/material";
 import Head from "next/head";
-import { Myself, Presentation } from "@/containers";
+import { Bio, FindMe, Hobby, Myself, Presentation, Footer } from "@/containers";
 
 export default function Home() {
   return (
@@ -22,6 +22,13 @@ export default function Home() {
           <Presentation />
           <Box height={50} />
           <Myself />
+          <Box height={25} />
+          <Bio />
+          <Box height={25} />
+          <Hobby />
+          <Box height={25} />
+          <FindMe />
+          <Footer />
         </Container>
       </Box>
     </div>

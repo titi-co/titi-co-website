@@ -12,7 +12,7 @@ export default function MyselfContainer({ children }) {
         <Typography
           variant="body1"
           className={bodyFont.className}
-          fontWeight={400}
+          fontWeight={500}
           mb={1}
           align="justify"
         >

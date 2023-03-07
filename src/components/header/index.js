@@ -143,7 +143,7 @@ const HeaderItem = function HeaderItem({ children, href, path, ...restProps }) {
     <Typography
       px={2}
       className={logoFont.className}
-      fontWeight={400}
+      fontWeight={500}
       variant="subtitle1"
     >
       <Link
