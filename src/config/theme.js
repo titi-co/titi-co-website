@@ -14,12 +14,13 @@ const getMode = (mode) => ({
           },
           custom: {
             sectionUnderline: "#4d4c4c",
+            headerSelected: "#fff",
           },
         }
       : {
           primary: { main: "#6C00FF", light: "#b399ff" },
           secondary: { main: "#FB2576" },
-          info: { light: "#90e5ee", main: "#2DCDDF", dark: "#11656e" },
+          info: { light: "#ffcc80", main: "#FFB84C", dark: "#b36b00" },
 
           background: {
             default: "#202023",
@@ -27,6 +28,7 @@ const getMode = (mode) => ({
           },
           custom: {
             sectionUnderline: "#464a53",
+            headerSelected: "#fff",
           },
         }),
   },

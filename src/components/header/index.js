@@ -1,20 +1,14 @@
+import { headerFont } from "@/config/fonts";
 import ColorModeContext from "@/contexts/colorModeContext";
 import { Box, Container, Menu, MenuItem, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import { Inter_Tight } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useState } from "react";
-
-const logoFont = Inter_Tight({
-  weight: ["400", "600"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
 
 export default function Header({ children, ...restProps }) {
   const theme = useTheme();
@@ -66,10 +60,13 @@ const Logo = function HeaderLogo({ children, ...restProps }) {
     notHovering: { y: 0 },
   };
 
+  const router = useRouter();
+
   return (
     <Box
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
+      onClick={() => router.push("/")}
       display="flex"
       flexDirection="row"
       justifyContent="center"
@@ -96,7 +93,7 @@ const Logo = function HeaderLogo({ children, ...restProps }) {
       </Box>
       <Typography
         pl={1}
-        className={logoFont.className}
+        className={headerFont.className}
         fontWeight={600}
         variant="h6"
       >
@@ -140,27 +137,51 @@ const HeaderItem = function HeaderItem({ children, href, path, ...restProps }) {
   const active = href == path;
 
   return (
-    <Typography
+    <Box
+      bgcolor={active ? theme.palette.primary.main : undefined}
+      py={1}
       px={2}
-      className={logoFont.className}
-      fontWeight={500}
-      variant="subtitle1"
     >
       <Link
         onMouseOver={() => setHover(true)}
         onMouseOut={() => setHover(false)}
         href={href}
         style={{
-          textDecoration: hover ? "underline" : "none",
-          color: active ? "#fff" : theme.palette.text.primary,
-          backgroundColor: active ? theme.palette.primary.main : undefined,
-          padding: 10,
-          borderRadius: 5,
+          textDecoration: "none",
+          color: active
+            ? theme.palette.custom.headerSelected
+            : theme.palette.text.primary,
         }}
       >
-        {children}
+        <Typography
+          display="inline-block"
+          position="relative"
+          variant="subtitle1"
+          fontWeight={500}
+          className={headerFont.className}
+          sx={
+            hover
+              ? {
+                  "&:after": {
+                    content: '""',
+                    position: "absolute",
+                    left: 0,
+                    bottom: 0,
+                    width: "100%",
+                    height: 2,
+                    backgroundColor: active
+                      ? theme.palette.custom.headerSelected
+                      : theme.palette.text.primary,
+                    borderRadius: 1,
+                  },
+                }
+              : {}
+          }
+        >
+          {children}
+        </Typography>
       </Link>
-    </Typography>
+    </Box>
   );
 };
 

@@ -136,7 +136,7 @@ Section.SocialButton = function SectionSocialButton({
                     bottom: 0,
                     width: "100%",
                     height: 2,
-                    backgroundColor: theme.palette.secondary.main,
+                    backgroundColor: theme.palette.info.main,
                     borderRadius: 1,
                   },
                 }
