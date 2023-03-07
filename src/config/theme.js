@@ -5,10 +5,13 @@ const getMode = (mode) => ({
     mode,
     ...(mode === "light"
       ? {
-          primary: { main: "#6C00FF" },
+          primary: { main: "#865DFF" },
           background: {
             default: "#F7EFE5",
             paper: "#fff",
+          },
+          custom: {
+            sectionUnderline: "#4d4c4c",
           },
         }
       : {
@@ -16,6 +19,9 @@ const getMode = (mode) => ({
           background: {
             default: "#202023",
             paper: "#151933",
+          },
+          custom: {
+            sectionUnderline: "#464a53",
           },
         }),
   },

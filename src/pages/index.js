@@ -1,14 +1,14 @@
 import { Callout, Header } from "@/components";
 import { Box, Container } from "@mui/material";
 import Head from "next/head";
-import { Presentation } from "@/containers";
+import { Myself, Presentation } from "@/containers";
 
 export default function Home() {
   return (
     <div>
       <Head>
         <title>titi.co</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <Header />
@@ -20,6 +20,8 @@ export default function Home() {
           </Callout>
           <Box height={25} />
           <Presentation />
+          <Box height={50} />
+          <Myself />
         </Container>
       </Box>
     </div>
