@@ -149,3 +149,44 @@ Section.SocialButton = function SectionSocialButton({
     </Button>
   );
 };
+
+Section.BodyLink = function SectionBodyLink({ children, href, ...restProps }) {
+  const [hover, setHover] = useState(false);
+  const theme = useTheme();
+
+  return (
+    <Link
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+      href={href}
+      style={{ textDecoration: "none", color: theme.palette.secondary.main }}
+    >
+      <Typography
+        component="span"
+        display="inline-block"
+        position="relative"
+        variant="subtitle1"
+        fontWeight={500}
+        className={bodyFont.className}
+        sx={
+          hover
+            ? {
+                "&:after": {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  bottom: 0,
+                  width: "100%",
+                  height: 2,
+                  backgroundColor: theme.palette.secondary.main,
+                  borderRadius: 1,
+                },
+              }
+            : {}
+        }
+      >
+        {children}
+      </Typography>
+    </Link>
+  );
+};

@@ -23,9 +23,12 @@ export default function HobbyContainer({ children }) {
           mb={1}
           align="justify"
         >
-          &emsp;&emsp;Music, Art, Gym, Deep Learning, Algorithms, playing games
-          (specially Destiny) and try Oreo and Nutella milkshake from all the
-          restaurants I visit.
+          &emsp;&emsp;Art,{" "}
+          <Section.BodyLink href="https://music.apple.com/profile/cotitico">
+            Music
+          </Section.BodyLink>
+          , Gym, Deep Learning, Algorithms, playing games (specially Destiny)
+          and try Oreo and Nutella milkshake from all the restaurants I visit.
         </Typography>
       </Section.Body>
     </Section>
