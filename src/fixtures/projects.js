@@ -79,6 +79,8 @@ export async function getWorkNameList() {
       params: {
         work: "neural-style-transfer",
       },
+    },
+    {
       params: {
         work: "we-task",
       },
