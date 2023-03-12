@@ -6,7 +6,8 @@ export default function PageWrapperContainer({ children }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{
-        duration: 0.5,
+        duration: 0.75,
+        ease: "easeInOut",
       }}
     >
       {children}
