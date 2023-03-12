@@ -1,9 +1,10 @@
 import { bodyFont } from "@/config/fonts";
 import { alpha, useTheme } from "@mui/material/styles";
-import { Typography, Box, Button, Stack } from "@mui/material";
+import { Typography, Box, Button, Stack, Grid } from "@mui/material";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Section({ children, ...restProps }) {
   return <>{children}</>;
@@ -188,5 +189,71 @@ Section.BodyLink = function SectionBodyLink({ children, href, ...restProps }) {
         {children}
       </Typography>
     </Link>
+  );
+};
+
+Section.SectionGrid = function SectionGrid({ children, ...restProps }) {
+  return (
+    <Grid container spacing={3}>
+      {children}
+    </Grid>
+  );
+};
+
+Section.SectionGridItem = function SectionGridItem({
+  key,
+  children,
+  ...restProps
+}) {
+  return (
+    <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={key}>
+      <Box display="flex" flex={1}>
+        {children}
+      </Box>
+    </Grid>
+  );
+};
+
+Section.SectionWorkCard = function SectionWorkCard({
+  name,
+  description,
+  cover,
+  ...restProps
+}) {
+  return (
+    <Box>
+      <Box
+        position="relative"
+        width="100%"
+        borderRadius={2}
+        overflow="hidden"
+        sx={{
+          height: {
+            xs: 250,
+            sm: 250,
+            md: 150,
+            lg: 150,
+            xl: 150,
+          },
+        }}
+      >
+        <Image src={`/images/${cover}`} alt={`${name}-cover`} fill />
+      </Box>
+      <Box height={25} />
+      <Typography
+        variant="subtitle1"
+        className={bodyFont.className}
+        fontWeight={700}
+      >
+        {name}
+      </Typography>
+      <Typography
+        variant="caption"
+        className={bodyFont.className}
+        fontWeight={400}
+      >
+        {description}
+      </Typography>
+    </Box>
   );
 };
