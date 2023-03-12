@@ -10,6 +10,7 @@ import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "@/config/createEmotionCache";
 import ColorModeContext from "@/contexts/colorModeContext";
 import getMode from "@/config/theme";
+import { Header } from "@/components";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -39,6 +40,7 @@ export default function MyApp(props) {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <Header />
           <Component {...pageProps} />
         </ThemeProvider>
       </ColorModeContext.Provider>

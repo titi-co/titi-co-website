@@ -1,5 +1,5 @@
 import { Header } from "@/components";
-import { Footer, Projects } from "@/containers";
+import { Footer, PageWrapper, Projects } from "@/containers";
 import { Box, Container } from "@mui/material";
 import Head from "next/head";
 
@@ -11,14 +11,14 @@ export default function Works() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <Header />
-
-      <Box as="main" pt={14} px={2}>
-        <Container maxWidth="sm">
-          <Projects />
-          <Footer />
-        </Container>
-      </Box>
+      <PageWrapper>
+        <Box as="main" pt={14} px={2}>
+          <Container maxWidth="sm">
+            <Projects />
+            <Footer />
+          </Container>
+        </Box>
+      </PageWrapper>
     </div>
   );
 }

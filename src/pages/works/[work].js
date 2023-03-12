@@ -1,5 +1,5 @@
 import { Header } from "@/components";
-import { Footer, Project } from "@/containers";
+import { Footer, PageWrapper, Project } from "@/containers";
 import { getWorkDetails, getWorkNameList } from "@/fixtures/projects";
 import { Box, Container } from "@mui/material";
 import Head from "next/head";
@@ -30,14 +30,14 @@ export default function Work({ work }) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <Header />
-
-      <Box as="main" pt={14} px={2}>
-        <Container maxWidth="sm">
-          <Project work={work} />
-          <Footer />
-        </Container>
-      </Box>
+      <PageWrapper>
+        <Box as="main" pt={14} px={2}>
+          <Container maxWidth="sm">
+            <Project work={work} />
+            <Footer />
+          </Container>
+        </Box>
+      </PageWrapper>
     </div>
   );
 }
