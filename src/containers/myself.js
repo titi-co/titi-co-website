@@ -27,7 +27,7 @@ export default function MyselfContainer({ children }) {
       </Section.Body>
       <Box height={25} />
       <Box display="flex" alignItems="center" justifyContent="center">
-        <Section.ButtonLink>My portfolio</Section.ButtonLink>
+        <Section.ButtonLink href={"/works"}>My portfolio</Section.ButtonLink>
       </Box>
     </Section>
   );

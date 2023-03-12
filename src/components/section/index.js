@@ -81,17 +81,23 @@ Section.TimelineItem = function SectionTimelineItem({
   );
 };
 
-Section.ButtonLink = function SectionButtonLink({ children, ...restProps }) {
+Section.ButtonLink = function SectionButtonLink({
+  href,
+  children,
+  ...restProps
+}) {
   return (
-    <Button
-      variant="contained"
-      disableElevation
-      disableRipple
-      endIcon={<KeyboardArrowRightRoundedIcon />}
-      sx={{ textTransform: "none" }}
-    >
-      {children}
-    </Button>
+    <Link href={href} style={{ textDecoration: "none" }}>
+      <Button
+        variant="contained"
+        disableElevation
+        disableRipple
+        endIcon={<KeyboardArrowRightRoundedIcon />}
+        sx={{ textTransform: "none" }}
+      >
+        {children}
+      </Button>
+    </Link>
   );
 };
 

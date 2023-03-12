@@ -16,7 +16,7 @@ export default function Callout({ children, icon, ...restProps }) {
       borderRadius={1}
     >
       <Box display="flex" flex={1}>
-        <Image src={icon} width={20} height={20} />
+        <Image alt={`callout-icon-${icon}`} src={icon} width={20} height={20} />
       </Box>
       <Box display="flex" flex={8}>
         <Typography variant="p" className={bodyFont.className} fontWeight={500}>

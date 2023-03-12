@@ -85,6 +85,7 @@ const Logo = function HeaderLogo({ children, ...restProps }) {
         animate={hover ? "hovering" : "notHovering"}
       >
         <Image
+          alt="logo"
           src={`/icons/${
             theme.palette.mode == "dark" ? "ghost-white" : "ghost-black"
           }.svg`}
@@ -248,6 +249,7 @@ const ColorMode = function HeaderColorMode({ children, ...restProps }) {
           transition={{ duration: 0.5, type: "spring", bounce: 0.25 }}
         >
           <Image
+            alt="theme-mode"
             src={`/icons/${theme.palette.mode == "dark" ? "sun" : "moon"}.svg`}
             width={25}
             height={25}
@@ -290,6 +292,7 @@ const MenuButton = function HeaderMenu({ children, ...restProps }) {
         sx={{ display: { xs: "flex", sm: "flex", md: "none" } }}
       >
         <Image
+          alt="menu"
           src={`/icons/${
             theme.palette.mode == "dark" ? "menu-white" : "menu-black"
           }.svg`}
