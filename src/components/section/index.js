@@ -1,10 +1,18 @@
 import { bodyFont } from "@/config/fonts";
 import { alpha, useTheme } from "@mui/material/styles";
-import { Typography, Box, Button, Stack, Grid } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Button,
+  Stack,
+  Grid,
+  Breadcrumbs,
+} from "@mui/material";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import YouTube from "react-youtube";
 
 export default function Section({ children, ...restProps }) {
   return <>{children}</>;
@@ -151,7 +159,12 @@ Section.SocialButton = function SectionSocialButton({
   );
 };
 
-Section.BodyLink = function SectionBodyLink({ children, href, ...restProps }) {
+Section.BodyLink = function SectionBodyLink({
+  variant = "subtitle1",
+  children,
+  href,
+  ...restProps
+}) {
   const [hover, setHover] = useState(false);
   const theme = useTheme();
 
@@ -166,7 +179,7 @@ Section.BodyLink = function SectionBodyLink({ children, href, ...restProps }) {
         component="span"
         display="inline-block"
         position="relative"
-        variant="subtitle1"
+        variant={variant}
         fontWeight={500}
         className={bodyFont.className}
         sx={
@@ -201,14 +214,20 @@ Section.SectionGrid = function SectionGrid({ children, ...restProps }) {
 };
 
 Section.SectionGridItem = function SectionGridItem({
-  key,
+  href,
   children,
   ...restProps
 }) {
+  const theme = useTheme();
   return (
-    <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={key}>
+    <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
       <Box display="flex" flex={1}>
-        {children}
+        <Link
+          style={{ textDecoration: "none", color: theme.palette.text.primary }}
+          href={`/works/${href}`}
+        >
+          {children}{" "}
+        </Link>
       </Box>
     </Grid>
   );
@@ -237,7 +256,12 @@ Section.SectionWorkCard = function SectionWorkCard({
           },
         }}
       >
-        <Image src={`/images/${cover}`} alt={`${name}-cover`} fill />
+        <Image
+          src={`/images/${cover}`}
+          alt={`${name}-cover`}
+          fill
+          style={{ objectFit: "cover" }}
+        />
       </Box>
       <Box height={25} />
       <Typography
@@ -248,12 +272,145 @@ Section.SectionWorkCard = function SectionWorkCard({
         {name}
       </Typography>
       <Typography
-        variant="caption"
+        variant="body2"
         className={bodyFont.className}
         fontWeight={400}
       >
         {description}
       </Typography>
+    </Box>
+  );
+};
+
+Section.Breadcrumbs = function SectionBreadcrumbs({
+  dateBegin,
+  dateEnd,
+  children,
+  ...restProps
+}) {
+  const theme = useTheme();
+  return (
+    <Box display="flex" flexDirection="row" alignItems="center">
+      <Breadcrumbs separator="›" aria-label="breadcrumb">
+        <Section.BodyLink href="/works">Works</Section.BodyLink>
+
+        <Typography
+          variant="subtitle1"
+          fontWeight={700}
+          className={bodyFont.className}
+          color={theme.palette.text.primary}
+        >
+          {children}
+        </Typography>
+      </Breadcrumbs>
+      <Box width={5} />
+      <Box
+        bgcolor={theme.palette.divider}
+        borderRadius={0.5}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          paddingX: 0.5,
+          paddingY: 0.25,
+        }}
+      >
+        <Typography
+          lineHeight={1}
+          variant="caption"
+          fontWeight={700}
+          className={bodyFont.className}
+          color={theme.palette.text.primary}
+        >{`${dateBegin}-${dateEnd}`}</Typography>
+      </Box>
+    </Box>
+  );
+};
+
+Section.Detail = function SectionDetail({ name, children, ...restProps }) {
+  const theme = useTheme();
+  return (
+    <Box
+      display="flex"
+      flexDirection="row"
+      justifyContent="start"
+      alignItems="center"
+    >
+      <Box
+        bgcolor={alpha(theme.palette.custom.detailBgColor, 0.5)}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        borderRadius={0.5}
+        sx={{
+          paddingX: 0.5,
+          paddingY: 0.25,
+        }}
+      >
+        <Typography
+          lineHeight={1}
+          variant="caption"
+          fontWeight={700}
+          className={bodyFont.className}
+          color={theme.palette.custom.detailTextColor}
+        >
+          {name}
+        </Typography>
+      </Box>
+      <Box width={25} />
+      <Typography
+        align="center"
+        lineHeight={1}
+        variant="body2"
+        fontWeight={700}
+        className={bodyFont.className}
+        color={theme.palette.text.primary}
+      >
+        {children}
+      </Typography>
+    </Box>
+  );
+};
+
+Section.Image = function SectionImage({ image, alt, children, ...restProps }) {
+  return (
+    <Box
+      position="relative"
+      width="100%"
+      borderRadius={2}
+      overflow="hidden"
+      sx={{
+        height: {
+          xs: 250,
+          sm: 250,
+          md: 400,
+          lg: 400,
+          xl: 400,
+        },
+      }}
+    >
+      <Image
+        src={`/images/${image}`}
+        fill
+        style={{ objectFit: "cover" }}
+        alt={alt}
+      />
+    </Box>
+  );
+};
+
+Section.Video = function SectionVideo({ video, children, ...restProps }) {
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
+
+  return (
+    <Box width="100%" height={390}>
+      <YouTube opts={opts} videoId={video} />
     </Box>
   );
 };

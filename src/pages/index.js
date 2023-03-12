@@ -15,7 +15,7 @@ export default function Home() {
 
       <Box as="main" pt={14} px={2}>
         <Container maxWidth="sm">
-          <Callout icon="./icons/emoji-hangloose.svg">
+          <Callout icon="/icons/emoji-hangloose.svg">
             Hi! I'm a brazilian software engineer!
           </Callout>
           <Box height={25} />

@@ -11,7 +11,8 @@ export const projects = [
     platform: "Web",
     stack: "React, Redux",
     images: ["mglt-app.png"],
-    video: "https://youtu.be/FCf4hT-JOrU",
+    video: "",
+    href: "mglt-calculator",
   },
   {
     id: "2",
@@ -22,9 +23,75 @@ export const projects = [
     dateBegin: "2022",
     dateEnd: "",
     website: "https://github.com/titi-co/dj-titico-v2",
-    platform: "Windows/macOS/Linux/iOS/Android",
+    platform: "Windows/macOS/Linux/iOS/Android/Web",
     stack: "NodeJS, Discord API",
     images: [],
     video: "",
+    href: "dj-titico",
+  },
+  {
+    id: "2",
+    cover: "neural-cover.jpeg",
+    name: "Neural Style Transfer",
+    description:
+      "A Neural Style Transfer developed during AI Classes at Computer Science - PUCMG.",
+    dateBegin: "2022",
+    dateEnd: "2022",
+    website: "https://github.com/titi-co/NeuralStyleTransfer",
+    platform: "Web/Colab/Windows/MacOs/Linux",
+    stack: "Python, Keras",
+    images: [],
+    video: "",
+    href: "neural-style-transfer",
   },
 ];
+
+export const collaborations = [
+  {
+    id: "1",
+    cover: "wetask-cover.png",
+    name: "WeTask",
+    description: "Worked as a developer on the WeTask app for Android and IOS.",
+    dateBegin: "2021",
+    dateEnd: "",
+    website: "https://wetask.com.br/",
+    platform: "Android, IOS",
+    stack: "Flutter, NodeJS",
+    images: [],
+    video: "FCf4hT-JOrU",
+    href: "we-task",
+  },
+];
+
+export async function getWorkNameList() {
+  return [
+    {
+      params: {
+        work: "mglt-calculator",
+      },
+    },
+    {
+      params: {
+        work: "dj-titico",
+      },
+    },
+    {
+      params: {
+        work: "neural-style-transfer",
+      },
+      params: {
+        work: "we-task",
+      },
+    },
+  ];
+}
+
+export async function getWorkDetails(work) {
+  const dataSet = {
+    "mglt-calculator": projects[0],
+    "dj-titico": projects[1],
+    "neural-style-transfer": projects[2],
+    "we-task": collaborations[0],
+  };
+  return dataSet[work];
+}

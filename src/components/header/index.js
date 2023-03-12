@@ -14,6 +14,7 @@ export default function Header({ children, ...restProps }) {
   const theme = useTheme();
   return (
     <Box
+      zIndex={1}
       position="fixed"
       width="100%"
       p={1}
@@ -84,7 +85,7 @@ const Logo = function HeaderLogo({ children, ...restProps }) {
         animate={hover ? "hovering" : "notHovering"}
       >
         <Image
-          src={`./icons/${
+          src={`/icons/${
             theme.palette.mode == "dark" ? "ghost-white" : "ghost-black"
           }.svg`}
           width={20}
@@ -247,7 +248,7 @@ const ColorMode = function HeaderColorMode({ children, ...restProps }) {
           transition={{ duration: 0.5, type: "spring", bounce: 0.25 }}
         >
           <Image
-            src={`./icons/${theme.palette.mode == "dark" ? "sun" : "moon"}.svg`}
+            src={`/icons/${theme.palette.mode == "dark" ? "sun" : "moon"}.svg`}
             width={25}
             height={25}
           />
@@ -289,7 +290,7 @@ const MenuButton = function HeaderMenu({ children, ...restProps }) {
         sx={{ display: { xs: "flex", sm: "flex", md: "none" } }}
       >
         <Image
-          src={`./icons/${
+          src={`/icons/${
             theme.palette.mode == "dark" ? "menu-white" : "menu-black"
           }.svg`}
           width={25}

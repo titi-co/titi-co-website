@@ -1,7 +1,6 @@
 import { Section } from "@/components";
 import { bodyFont } from "@/config/fonts";
 import { Typography, Box } from "@mui/material";
-import { Container } from "@mui/system";
 
 export default function MyselfContainer({ children }) {
   return (

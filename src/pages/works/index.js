@@ -1,5 +1,5 @@
 import { Header } from "@/components";
-import { Projects } from "@/containers";
+import { Footer, Projects } from "@/containers";
 import { Box, Container } from "@mui/material";
 import Head from "next/head";
 
@@ -16,6 +16,7 @@ export default function Works() {
       <Box as="main" pt={14} px={2}>
         <Container maxWidth="sm">
           <Projects />
+          <Footer />
         </Container>
       </Box>
     </div>

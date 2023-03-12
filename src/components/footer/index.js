@@ -4,7 +4,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 export default function Footer({ children, ...restProps }) {
   const theme = useTheme();
   return (
-    <Box p={theme.spacing(4)}>
+    <Box p={theme.spacing(4)} width="100%" bgcolor={theme.palette.background}>
       <Typography
         variant="subtitle2"
         className={bodyFont.className}
