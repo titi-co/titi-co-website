@@ -32,7 +32,10 @@ export default function ProjectContainer({ work, children }) {
         <Section.Detail name="STACK">{work.stack}</Section.Detail>
         <Box height={25} />
         {work.images.map((image, index) => (
-          <Section.Image key={index} image={image} alt={`work-${index}`} />
+          <>
+            <Section.Image key={index} image={image} alt={`work-${index}`} />
+            <Box height={10} />
+          </>
         ))}
         {work.video != "" ? <Section.Video video={work.video} /> : null}
       </Section.Body>
