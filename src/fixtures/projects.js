@@ -19,7 +19,7 @@ export const projects = [
     cover: "discord-cover.png",
     name: "DJ Titico Music Bot",
     description:
-      "A discord music bot developed to be the main bot for our discord friends server.",
+      "A discord music bot developed to be the main bot for our friends discord server.",
     dateBegin: "2022",
     dateEnd: "",
     website: "https://github.com/titi-co/dj-titico-v2",
