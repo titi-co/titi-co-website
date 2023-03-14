@@ -7,3 +7,4 @@ export { default as Footer } from "./footer";
 export { default as Projects } from "./projects";
 export { default as Project } from "./project";
 export { default as PageWrapper } from "./page_wrapper";
+export { default as Character } from "./character";

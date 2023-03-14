@@ -11,6 +11,7 @@ import createEmotionCache from "@/config/createEmotionCache";
 import ColorModeContext from "@/contexts/colorModeContext";
 import getMode from "@/config/theme";
 import { Header } from "@/components";
+import { Character } from "@/containers";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -41,6 +42,7 @@ export default function MyApp(props) {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Header />
+          <Character />
           <Component {...pageProps} />
         </ThemeProvider>
       </ColorModeContext.Provider>
