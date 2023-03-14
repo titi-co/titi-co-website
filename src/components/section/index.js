@@ -87,7 +87,7 @@ Section.ButtonLink = function SectionButtonLink({
   ...restProps
 }) {
   return (
-    <Link href={href} style={{ textDecoration: "none" }}>
+    <Link href={href} style={{ textDecoration: "none" }} scroll={false}>
       <Button
         variant="contained"
         disableElevation
@@ -132,6 +132,7 @@ Section.SocialButton = function SectionSocialButton({
       }}
     >
       <Link
+        scroll={false}
         href={href}
         style={{ textDecoration: "none", color: theme.palette.info.main }}
       >
@@ -176,6 +177,7 @@ Section.BodyLink = function SectionBodyLink({
 
   return (
     <Link
+      scroll={false}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
       href={href}
@@ -229,6 +231,7 @@ Section.SectionGridItem = function SectionGridItem({
     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
       <Box display="flex" flex={1}>
         <Link
+          scroll={false}
           style={{ textDecoration: "none", color: theme.palette.text.primary }}
           href={`/works/${href}`}
         >

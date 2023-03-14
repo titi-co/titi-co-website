@@ -67,7 +67,7 @@ const Logo = function HeaderLogo({ children, ...restProps }) {
     <Box
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
-      onClick={() => router.push("/")}
+      onClick={() => router.push("/", undefined, { scroll: false })}
       display="flex"
       flexDirection="row"
       justifyContent="center"
@@ -145,6 +145,7 @@ const HeaderItem = function HeaderItem({ children, href, path, ...restProps }) {
       px={2}
     >
       <Link
+        scroll={false}
         onMouseOver={() => setHover(true)}
         onMouseOut={() => setHover(false)}
         href={href}
