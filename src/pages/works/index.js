@@ -12,7 +12,7 @@ export default function Works() {
       </Head>
 
       <PageWrapper>
-        <Box as="main" pt={14} px={2}>
+        <Box as="main" pt={10} px={2}>
           <Container maxWidth="sm">
             <Projects />
             <Footer />

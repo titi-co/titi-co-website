@@ -31,7 +31,7 @@ export default function Work({ work }) {
       </Head>
 
       <PageWrapper>
-        <Box as="main" pt={14} px={2}>
+        <Box as="main" pt={10} px={2}>
           <Container maxWidth="sm">
             <Project work={work} />
             <Footer />

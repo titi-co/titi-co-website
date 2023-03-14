@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
 
       <PageWrapper>
-        <Box as="main" pt={14} px={2}>
+        <Box as="main" pt={10} px={2}>
           <Container maxWidth="sm">
             <Callout icon="/icons/emoji-hangloose.svg">
               Hi! I'm a brazilian software engineer!
