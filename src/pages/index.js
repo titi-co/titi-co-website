@@ -23,7 +23,7 @@ export default function Home() {
         <Box as="main" pt={10} px={2}>
           <Container maxWidth="sm">
             <Callout icon="/icons/emoji-hangloose.svg">
-              Hi! I'm a brazilian software engineer!
+              Hi! I&apos;m a brazilian software engineer!
             </Callout>
             <Box height={25} />
             <Presentation />
