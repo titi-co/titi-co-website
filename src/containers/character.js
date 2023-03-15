@@ -5,7 +5,7 @@ import { Suspense, useRef } from "react";
 import { useGesture } from "react-use-gesture";
 
 const Model = () => {
-  const gltf = useGLTF("/models/ghostheadset.glb");
+  const gltf = useGLTF("/models/ghost-model.glb");
   const meshRef = useRef();
 
   useFrame(() => {

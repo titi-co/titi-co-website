@@ -269,7 +269,7 @@ const MenuButton = function HeaderMenu({ children, ...restProps }) {
     setAnchorEl(event.currentTarget);
   };
   const handleNavigation = (path) => {
-    router.push(path);
+    router.push(path, undefined, { scroll: false });
   };
 
   const handleClose = () => {

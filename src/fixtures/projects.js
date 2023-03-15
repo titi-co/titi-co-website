@@ -44,6 +44,21 @@ export const projects = [
     video: "",
     href: "neural-style-transfer",
   },
+  {
+    id: "3",
+    cover: "infinite-monkey-cover.jpeg",
+    name: "Genetic Algorithm - Infinite Monkey Theorem",
+    description:
+      "The infinite monkey theorem implementation with genetic algorithm using p5.js.",
+    dateBegin: "2022",
+    dateEnd: "2022",
+    website: "https://github.com/titi-co/InfineMonkeyTheorem",
+    platform: "Web",
+    stack: "JavaScript, p5.js",
+    images: [],
+    video: "",
+    href: "infinite-monkey-theorem",
+  },
 ];
 
 export const collaborations = [
@@ -85,6 +100,11 @@ export async function getWorkNameList() {
         work: "we-task",
       },
     },
+    {
+      params: {
+        work: "infinite-monkey-theorem",
+      },
+    },
   ];
 }
 
@@ -93,6 +113,7 @@ export async function getWorkDetails(work) {
     "mglt-calculator": projects[0],
     "dj-titico": projects[1],
     "neural-style-transfer": projects[2],
+    "infinite-monkey-theorem": projects[3],
     "we-task": collaborations[0],
   };
   return dataSet[work];
