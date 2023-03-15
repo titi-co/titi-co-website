@@ -266,6 +266,8 @@ Section.SectionWorkCard = function SectionWorkCard({
         }}
       >
         <Image
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP0Y/i/HwAD/wIO0GQJWwAAAABJRU5ErkJggg=="
           src={`/images/${cover}`}
           alt={`${name}-cover`}
           fill
@@ -399,6 +401,8 @@ Section.Image = function SectionImage({ image, alt, children, ...restProps }) {
       }}
     >
       <Image
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP0Y/i/HwAD/wIO0GQJWwAAAABJRU5ErkJggg=="
         src={`/images/${image}`}
         fill
         style={{ objectFit: "cover" }}

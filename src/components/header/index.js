@@ -85,6 +85,7 @@ const Logo = function HeaderLogo({ children, ...restProps }) {
         animate={hover ? "hovering" : "notHovering"}
       >
         <Image
+          priority
           alt="logo"
           src={`/icons/${
             theme.palette.mode == "dark" ? "ghost-white" : "ghost-black"
