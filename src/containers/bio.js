@@ -17,6 +17,10 @@ export default function BioContainer({ children }) {
             description="Completed Technician Degree in COTEMIG"
           />
           <Section.TimelineItem
+            date="2019"
+            description="Worked at Seidor Brasil as an Intern."
+          />
+          <Section.TimelineItem
             date="2021"
             description="Worked at nata.house as JavaScript and Flutter Developer."
           />
